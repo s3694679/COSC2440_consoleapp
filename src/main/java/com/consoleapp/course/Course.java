@@ -1,5 +1,7 @@
 package com.consoleapp.course;
 
+import java.util.Objects;
+
 public class Course {
     private String id;
     private String name;
@@ -38,10 +40,23 @@ public class Course {
 
     @Override
     public String toString() {
-        return "src.java.com.consoleapp.course.Course{" +
+        return "Course{" +
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", credits='" + credits + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Course course = (Course) o;
+        return id.equals(course.id) && name.equals(course.name) && credits.equals(course.credits);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, credits);
     }
 }
