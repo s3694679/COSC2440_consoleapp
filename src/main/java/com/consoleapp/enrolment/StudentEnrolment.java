@@ -5,11 +5,10 @@ import com.consoleapp.student.Student;
 
 import java.util.ArrayList;
 
-public class StudentEnrolment implements StudentEnrolmentManager{
+public class StudentEnrolment {
     private Student student;
     private Course course;
     private String semester;
-    private ArrayList<StudentEnrolment> enrolmentList = new ArrayList<>();
 
     public StudentEnrolment(Student student, Course course, String semester) {
         this.student = student;
@@ -43,37 +42,10 @@ public class StudentEnrolment implements StudentEnrolmentManager{
 
     @Override
     public String toString() {
-        return "src.java.com.consoleapp.enrolment.StudentEnrolment{" +
-                "src.java.com.consoleapp.student=" + student +
-                ", src.java.com.consoleapp.course=" + course +
+        return "StudentEnrolment{" +
+                "student=" + student +
+                ", course=" + course +
                 ", semester='" + semester + '\'' +
                 '}';
-    }
-
-    @Override
-    public void add(StudentEnrolment enrolment) {
-        enrolmentList.add(enrolment);
-    }
-
-    @Override
-    public void update(StudentEnrolment oldEnrol, StudentEnrolment newEnrol) {
-        oldEnrol.setCourse(newEnrol.getCourse());
-        oldEnrol.setStudent(newEnrol.getStudent());
-        oldEnrol.setSemester(newEnrol.getSemester());
-    }
-
-    @Override
-    public void delete(StudentEnrolment enrolment) {
-        enrolmentList.remove(enrolment);
-    }
-
-    @Override
-    public void getOne(StudentEnrolment target) {
-//
-    }
-
-    @Override
-    public ArrayList<StudentEnrolment> getAll() {
-        return this.enrolmentList;
     }
 }
