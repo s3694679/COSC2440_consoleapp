@@ -1,9 +1,9 @@
-package student;
+package com.consoleapp.student;
 
 public class Student {
-    private final String id;
-    private final String name;
-    private final String birthdate;
+    private String id;
+    private String name;
+    private String birthdate;
 
     private Student(StudentBuilder builder){
         this.id = builder.id;
@@ -15,29 +15,29 @@ public class Student {
         return id;
     }
 
-//    public void setId(String id) {
-//        this.id = id;
-//    }
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;
     }
 
-//    public void setName(String name) {
-//        this.name = name;
-//    }
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public String getBirthdate() {
         return birthdate;
     }
 
-//    public void setBirthdate(String birthdate) {
-//        this.birthdate = birthdate;
-//    }
+    public void setBirthdate(String birthdate) {
+        this.birthdate = birthdate;
+    }
 
     @Override
     public String toString() {
-        return "student.Student{" +
+        return "src.java.com.consoleapp.student.Student{" +
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", birthdate='" + birthdate + '\'' +

@@ -1,4 +1,4 @@
-package course;
+package com.consoleapp.course;
 
 public class Course {
     private String id;
@@ -38,7 +38,7 @@ public class Course {
 
     @Override
     public String toString() {
-        return "course.Course{" +
+        return "src.java.com.consoleapp.course.Course{" +
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", credits='" + credits + '\'' +
