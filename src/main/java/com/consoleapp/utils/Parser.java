@@ -6,6 +6,7 @@ import com.consoleapp.student.Student;
 import com.opencsv.CSVReader;
 import com.opencsv.exceptions.CsvException;
 
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -15,8 +16,7 @@ import java.util.Objects;
 public class Parser {
     public static List<String[]> parser(String fileName) throws IOException, CsvException {
         try (CSVReader reader = new CSVReader(new FileReader(fileName))) {
-            List<String[]> r = reader.readAll();
-            return r;
+            return reader.readAll();
         }
     }
 
@@ -67,7 +67,6 @@ public class Parser {
                 String studentId = l[0];
                 for (Student student : students){
                     if (Objects.equals(student.getId(), studentId)) {
-
                         currentStudent = student;
                     }
                 }
