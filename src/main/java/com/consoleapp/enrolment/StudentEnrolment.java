@@ -4,8 +4,10 @@ import com.consoleapp.course.Course;
 import com.consoleapp.student.Student;
 
 import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.Objects;
 
-public class StudentEnrolment {
+public class StudentEnrolment implements Comparable<StudentEnrolment> {
     private Student student;
     private Course course;
     private String semester;
@@ -40,11 +42,27 @@ public class StudentEnrolment {
         this.semester = semester;
     }
 
+
     @Override
     public String toString() {
         return "Enrolment:" +
                 " \'" + student.getName() +
                 "\'" + " is in " + "\'" + course.getName() +
                 "\'" + " for the "+ "\'" + semester + "\'" + " semester.";
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        StudentEnrolment that = (StudentEnrolment) o;
+        return Objects.equals(student, that.student) &&
+                Objects.equals(course, that.course) &&
+                Objects.equals(semester, that.semester);
+    }
+
+    @Override
+    public int compareTo(StudentEnrolment o) {
+        return this.getSemester().compareTo((o.getSemester()));
     }
 }

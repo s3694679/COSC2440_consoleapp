@@ -85,4 +85,8 @@ public class Parser {
         }
         return enrolments;
     }
+
+//    public static ArrayList<Course> semesterHandler(List<String[]> r) {
+//
+//    }
 }
