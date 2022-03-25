@@ -2,7 +2,7 @@ package com.consoleapp.course;
 
 import java.util.Objects;
 
-public class Course {
+public class Course implements Comparable<Course>{
     private String id;
     private String name;
     private String credits;
@@ -57,5 +57,10 @@ public class Course {
     @Override
     public int hashCode() {
         return Objects.hash(id, name, credits);
+    }
+
+    @Override
+    public int compareTo(Course o) {
+        return id.compareTo(o.getId());
     }
 }

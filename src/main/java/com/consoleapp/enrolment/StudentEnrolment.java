@@ -3,8 +3,6 @@ package com.consoleapp.enrolment;
 import com.consoleapp.course.Course;
 import com.consoleapp.student.Student;
 
-import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.Objects;
 
 public class StudentEnrolment implements Comparable<StudentEnrolment> {
@@ -62,7 +60,17 @@ public class StudentEnrolment implements Comparable<StudentEnrolment> {
     }
 
     @Override
+    public int hashCode() {
+        return Objects.hash(course, student, semester);
+    }
+
+    @Override
     public int compareTo(StudentEnrolment o) {
-        return this.getSemester().compareTo((o.getSemester()));
+        int i = semester.compareTo((o.getSemester()));
+        if(i != 0) return i;
+
+        i = course.compareTo(o.getCourse());
+        if(i != 0) return i;
+        return student.compareTo(o.getStudent());
     }
 }
