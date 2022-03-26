@@ -76,12 +76,7 @@ public class Student implements Comparable<Student>{
             return this;
         }
         public Student build() {
-            Student student = new Student(this);
-            validateStudentObject(student);
-            return student;
-        }
-        private void validateStudentObject(Student student) {
-
+            return new Student(this);
         }
     }
 }

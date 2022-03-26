@@ -43,10 +43,7 @@ public class StudentEnrolment implements Comparable<StudentEnrolment> {
 
     @Override
     public String toString() {
-        return "Enrolment:" +
-                " \'" + student.getName() +
-                "\'" + " is in " + "\'" + course.getName() +
-                "\'" + " for the "+ "\'" + semester + "\'" + " semester.";
+        return "Enrolment:" + student.getName() + " is in " + course.getName() + " for the " + semester + " semester.";
     }
 
     @Override

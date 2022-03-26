@@ -1,4 +1,4 @@
-package com.consoleapp.utils;
+package com.consoleapp.misc;
 
 import com.consoleapp.course.Course;
 import com.consoleapp.enrolment.StudentEnrolment;
@@ -6,7 +6,6 @@ import com.consoleapp.student.Student;
 import com.opencsv.CSVReader;
 import com.opencsv.exceptions.CsvException;
 
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -14,6 +13,7 @@ import java.util.List;
 import java.util.Objects;
 
 public class Parser {
+
     public static List<String[]> parser(String fileName) throws IOException, CsvException {
         try (CSVReader reader = new CSVReader(new FileReader(fileName))) {
             return reader.readAll();
@@ -30,11 +30,9 @@ public class Parser {
                 Student current = new Student.StudentBuilder(studentId, studentName)
                         .birthdate(studentBirthdate)
                         .build();
-                if(students.contains(current)) {
-                    continue;
-                } else {
+                if(!students.contains(current)) {
                     students.add(current);
-                };
+                }
             }
         }
         return students;
@@ -48,11 +46,9 @@ public class Parser {
                 String courseName = l[4];
                 String courseCredits = l[5];
                 Course current = new Course(courseId,courseName, courseCredits);
-                if(courses.contains(current)) {
-                    continue;
-                } else {
+                if(!courses.contains(current)) {
                     courses.add(current);
-                };
+                }
             }
         }
         return courses;
@@ -85,4 +81,5 @@ public class Parser {
         }
         return enrolments;
     }
+
 }

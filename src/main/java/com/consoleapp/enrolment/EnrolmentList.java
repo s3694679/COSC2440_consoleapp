@@ -1,7 +1,5 @@
 package com.consoleapp.enrolment;
 
-import com.consoleapp.student.Student;
-
 import java.util.ArrayList;
 
 public class EnrolmentList implements StudentEnrolmentManager{
@@ -10,7 +8,7 @@ public class EnrolmentList implements StudentEnrolmentManager{
     private String currentListType = "none";
     private static EnrolmentList instance = new EnrolmentList();
 
-    private EnrolmentList(){};
+    private EnrolmentList(){}
 
     public static EnrolmentList getInstance(){
         return instance;
@@ -22,7 +20,7 @@ public class EnrolmentList implements StudentEnrolmentManager{
 
     public void setCurrentList(ArrayList<StudentEnrolment> list){
         this.currentList = list;
-    };
+    }
 
     public String getCurrentListType() {
         return currentListType;
@@ -55,7 +53,7 @@ public class EnrolmentList implements StudentEnrolmentManager{
         enrolmentList.forEach(e -> {
             if(e.getStudent().getId().equals(studentID) && e.getSemester().equals(semester)){
                 found.add(e);
-            };
+            }
         });
         return found;
     }
