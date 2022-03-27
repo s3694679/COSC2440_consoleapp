@@ -65,7 +65,6 @@ public class StudentEnrolment implements Comparable<StudentEnrolment> {
     public int compareTo(StudentEnrolment o) {
         int i = semester.compareTo((o.getSemester()));
         if(i != 0) return i;
-
         i = course.compareTo(o.getCourse());
         if(i != 0) return i;
         return student.compareTo(o.getStudent());

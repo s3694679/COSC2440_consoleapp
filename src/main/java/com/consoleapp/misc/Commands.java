@@ -311,4 +311,9 @@ public class Commands {
         waitFor(2000);
     }
 
+    public static void unSetList(EnrolmentList enrolmentList){
+        enrolmentList.setCurrentListType("none");
+        System.out.println("Selected list reset.");
+        waitFor(2000);
+    }
 }

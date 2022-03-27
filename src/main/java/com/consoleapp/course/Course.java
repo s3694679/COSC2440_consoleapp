@@ -40,9 +40,9 @@ public class Course implements Comparable<Course>{
 
     @Override
     public String toString() {
-        return "Course ID: '" + id + '\'' +
-                ", Name: '" + name + '\'' +
-                ", Credits: '" + credits + '\'' +
+        return "Course ID: '" + id +
+                ", Name: '" + name +
+                ", Credits: '" + credits +
                 '}';
     }
 

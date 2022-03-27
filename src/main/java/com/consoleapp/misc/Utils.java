@@ -54,12 +54,6 @@ public class Utils {
         }
     }
 
-    public static void unSetList(EnrolmentList enrolmentList){
-        enrolmentList.setCurrentListType("none");
-        System.out.println("Selected list reset.");
-        waitFor(2000);
-    }
-
     public static boolean writeToCSV(String filePath, ArrayList<StudentEnrolment> enrolments) {
         File file = new File(filePath);
         System.out.println("Path: [" + file.getAbsolutePath() + "]");
